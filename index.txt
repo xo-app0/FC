@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anxiety Treatment — Flip Cards</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #F0FAFB;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #0097A7;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    p.subtitle {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 36px;
+      text-align: center;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      max-width: 960px;
+    }
+
+    .card-wrapper {
+      width: 240px;
+      height: 200px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.55s ease;
+      border-radius: 14px;
+    }
+
+    .card-wrapper:hover .card,
+    .card-wrapper.flipped .card {
+      transform: rotateY(180deg);
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    }
+
+    .front {
+      background: #0097A7;
+      color: white;
+    }
+
+    .front .icon {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .front .name {
+      font-size: 17px;
+      font-weight: bold;
+      line-height: 1.3;
+    }
+
+    .front .hint {
+      font-size: 11px;
+      margin-top: 10px;
+      opacity: 0.75;
+    }
+
+    .back {
+      background: white;
+      color: #212121;
+      transform: rotateY(180deg);
+      border: 2px solid #B2EBF2;
+    }
+
+    .back .label {
+      font-size: 12px;
+      font-weight: bold;
+      color: #0097A7;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    .back .description {
+      font-size: 13px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .back .tag {
+      margin-top: 12px;
+      background: #E0F7FA;
+      color: #0097A7;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Anxiety Disorder Treatments</h1>
+  <p class="subtitle">Hover over a card (or tap on mobile) to reveal how each treatment works</p>
+
+  <div class="grid">
+
+    <div class="card-wrapper">
+      <div class="card">
+        <div class="front">
+          <div class="icon">🧠</div>
+          <div class="name">Cognitive Behavioural Therapy (CBT)</div>
+          <div class="hint">Hover to learn more</div>
+        </div>
+        <div class="back">
+          <div class="label">How it works</div>
+          <div class="description">Identifies and challenges distorted thinking patterns, then gradually faces feared situations through structured exposure.</div>
+          <div class="tag">Gold standard treatment</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper">
+      <div class="card">
+        <div class="front">
+          <div class="icon">💊</div>
+          <div class="name">Medication (SSRIs)</div>
+          <div class="hint">Hover to learn more</div>
+        </div>
+        <div class="back">
+          <div class="label">How it works</div>
+          <div class="description">SSRIs increase serotonin in the brain, reducing the intensity of the fear response. Benzodiazepines may be used short-term for severe symptoms.</div>
+          <div class="tag">Biological treatment</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper">
+      <div class="card">
+        <div class="front">
+          <div class="icon">🧘</div>
+          <div class="name">Mindfulness (MBCT)</div>
+          <div class="hint">Hover to learn more</div>
+        </div>
+        <div class="back">
+          <div class="label">How it works</div>
+          <div class="description">Teaches patients to observe anxious thoughts without reacting — separating the person from the thought rather than fighting it.</div>
+          <div class="tag">Psychological treatment</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper">
+      <div class="card">
+        <div class="front">
+          <div class="icon">⚡</div>
+          <div class="name">Exposure Therapy (ERP)</div>
+          <div class="hint">Hover to learn more</div>
+        </div>
+        <div class="back">
+          <div class="label">How it works</div>
+          <div class="description">Gradual, safe exposure to fear triggers without performing avoidance behaviours. Commonly used for phobias and OCD.</div>
+          <div class="tag">Behavioural treatment</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper">
+      <div class="card">
+        <div class="front">
+          <div class="icon">🏃</div>
+          <div class="name">Lifestyle Modifications</div>
+          <div class="hint">Hover to learn more</div>
+        </div>
+        <div class="back">
+          <div class="label">How it works</div>
+          <div class="description">Regular exercise reduces cortisol, while good sleep hygiene, reduced caffeine, and social connection all clinically lower anxiety levels.</div>
+          <div class="tag">Self-help strategy</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Clinical Psychology Website Project — Anxiety Disorders & Fear Response</footer>
+
+  <script>
+    // Tap to flip on mobile
+    document.querySelectorAll('.card-wrapper').forEach(card => {
+      card.addEventListener('click', () => card.classList.toggle('flipped'));
+    });
+  </script>
+
+</body>
+</html>
